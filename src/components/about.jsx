@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom';
 import founder from '../assets/founder.svg';
 
 export default function About() {
-  const [showMore, setShowMore] = useState(false); // State to track "Learn More" button click
+  const [showMore, setShowMore] = useState(false); 
 
   const handleShowMore = () => {
-    setShowMore(!showMore); // Toggle visibility of the remaining paragraphs
+    setShowMore(!showMore);
   };
 
   return (
@@ -62,7 +62,7 @@ export default function About() {
         {/* Learn More Button */}
         <button
           onClick={handleShowMore}
-          className='bg-[#9B2B87] w-[200px] h-[54px] rounded-[20px] text-white font-inter text-[20px] font-semibold block md:hidden'
+          className='bg-[#9B2B87] mb-10 w-[200px] h-[54px] rounded-[20px] text-white font-inter text-[20px] font-semibold block md:hidden'
         >
           {showMore ? 'Show Less' : 'Learn More'}
         </button>

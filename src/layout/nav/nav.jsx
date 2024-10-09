@@ -26,7 +26,7 @@ export default function Nav() {
 
   return (
     <div
-      className={`fixed top-0 px-[10px] md:px-[40px] w-full flex flex-row justify-center gap-[155px] items-center h-[100px] transition-all duration-300 ease-in-out ${
+      className={`fixed top-0 px-[10px] md:px-[40px]  z-10 w-full flex flex-row justify-center gap-[155px] items-center h-[100px] transition-all duration-300 ease-in-out ${
         scroll ? 'bg-[#6F6B6E]' : 'bg-transparent'
       }`}
     >
@@ -34,7 +34,7 @@ export default function Nav() {
 
     
       <div className="md:hidden flex items-center">
-        <button onClick={toggleMenu} className="text-white text-3xl">
+        <button onClick={toggleMenu} className="text-white text-3xl pr-10 md:pr-0 ">
           {menuOpen ? <FaTimes /> : <FaBars />} 
         </button>
       </div>
