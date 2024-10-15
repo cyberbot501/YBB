@@ -35,7 +35,7 @@ export default function Nav() {
     
       <div className="md:hidden flex items-center">
         <button onClick={toggleMenu} className="text-white text-3xl pr-10 md:pr-0 ">
-          {menuOpen ? <FaTimes /> : <FaBars />} 
+          {menuOpen ? <FaTimes className='bg-[#C33AAA]'/> : <FaBars className='text-[#C33AAA]'/>} 
         </button>
       </div>
 
