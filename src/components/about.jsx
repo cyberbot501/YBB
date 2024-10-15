@@ -12,12 +12,12 @@ export default function About() {
   return (
     <div className='bg-[#00000030] px-[25px] md:px-[40px] flex flex-col justify-center items-center overflow-x-hidden'>
       <div className='md:w-[1200px] w-[100%] h-[53px] md:gap-48 bg-[40px] gap-3 bg-[#6F6B6E] my-[20px] flex flex-row justify-center items-center'>
-        <NavLink className='font-roboto font-semibold text-white md:text-[21px]'>About BYT</NavLink>
+        <NavLink className='font-roboto font-semibold text-white md:text-[21px]'>About FNFEE</NavLink>
         <NavLink className='font-roboto font-semibold text-white md:text-[21px]'>Mission & Vision</NavLink>
         <NavLink className='font-roboto font-semibold text-white md:text-[21px]'>Leadership</NavLink>
       </div>
 
-      <h1 className='font-roboto font-bold text-[#6F6B6E] md:text-[26px] pb-5 md:pb-10'>ABOUT <span className='text-[#9B2B87]'>BYT</span></h1>
+      <h1 className='font-roboto font-bold text-[#6F6B6E] md:text-[26px] pb-5 md:pb-10'>ABOUT <span className='text-[#9B2B87]'>FNFEE</span></h1>
 
       <div className='flex flex-col md:flex-row justify-center gap-12 items-center md:items-start'>
         <img src={founder} alt="Founder" className='md:w-[605px] h-[500px] md:h-[920px]' />

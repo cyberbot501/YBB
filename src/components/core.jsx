@@ -16,7 +16,7 @@ export default function core() {
         ]
 
   return (
-    <div className='md:mt-[-390px] mt-[-270px] bg-white'>
+    <div className='md:mt-[-390px] mt-[-260px] bg-white'>
         <div className='bg-[#00000030] flex flex-col justify-center items-center px-[20px] md:px-[40px] overflow-hidden pt-[20px]'>
         <h2 className='text-[32px] pb-[20px] font-inter font-medium  '>OUR CORE VALUES</h2>
         <div className='grid grid-cols-1 md:grid-cols-4 gap-5 md:gap-20 pb-[20px]'>
