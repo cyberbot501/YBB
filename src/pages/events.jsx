@@ -8,7 +8,7 @@ function Events() {
         <div>
             <Nav />
             <Event />
-            <Details />
+            {/* <Details /> */}
         </div>
     )
 }
