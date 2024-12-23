@@ -254,64 +254,57 @@ export default function AdminPanel() {
       )}
 
       {/* Events Table */}
-      <div className="overflow-x-auto">
-        <table className="table-auto w-full bg-white shadow-md rounded-md">
-          <thead className="bg-gray-200">
-            <tr>
-              <th className="px-4 py-2">Event Name</th>
-              <th className="px-4 py-2">Date</th>
-              <th className="px-4 py-2">Time</th>
-              <th className="px-4 py-2">Type</th>
-              <th className="px-4 py-2">Details</th>
-              <th className="px-4 py-2">Image</th>
-              <th className="px-4 py-2">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {events.map((event) => (
-              <tr key={event.id} className="border-t">
-                <td className="px-4 py-2">{event.event_name}</td>
-                <td className="px-4 py-2">{event.event_date}</td>
-                <td className="px-4 py-2">{event.event_time}</td>
-                <td className="px-4 py-2">{event.event_type}</td>
-                <td
-                  style={{
-                    maxWidth: "200px",
-                    wordWrap: "break-word",
-                    whiteSpace: "normal",
-                  }}
-                  className="px-4 py-2"
+      <table className="table-auto w-full bg-white shadow-md rounded-md">
+        <thead className="bg-gray-200">
+          <tr>
+            <th className="px-4 py-2">Event Name</th>
+            <th className="px-4 py-2">Date</th>
+            <th className="px-4 py-2">Time</th>
+            <th className="px-4 py-2">Type</th>
+            <th className="px-4 py-2">Details</th>
+            <th className="px-4 py-2">Image</th>
+            <th className="px-4 py-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {events.map((event) => (
+            <tr key={event.id} className="border-t">
+              <td className="px-4 py-2">{event.event_name}</td>
+              <td className="px-4 py-2">{event.event_date}</td>
+              <td className="px-4 py-2">{event.event_time}</td>
+              <td className="px-4 py-2">{event.event_type}</td>
+              <td style={{
+    maxWidth: "200px",
+    wordWrap: "break-word",
+    whiteSpace: "normal",
+  }} className="px-4 py-2">{event.event_details}</td>
+              <td className="px-4 py-2">
+                {event.event_image && (
+                  <img
+                    src={event.event_image}
+                    alt={event.event_name}
+                    className="w-16 h-16 object-cover rounded-md"
+                  />
+                )}
+              </td>
+              <td className="px-4 py-2 flex gap-2">
+                <button
+                  onClick={() => deleteEvent(event.id)}
+                  className="bg-red-600 text-white p-1 rounded hover:bg-red-700"
                 >
-                  {event.event_details}
-                </td>
-                <td className="px-4 py-2">
-                  {event.event_image && (
-                    <img
-                      src={event.event_image}
-                      alt={event.event_name}
-                      className="w-16 h-16 object-cover rounded-md"
-                    />
-                  )}
-                </td>
-                <td className="px-4 py-2 flex gap-2">
-                  <button
-                    onClick={() => deleteEvent(event.id)}
-                    className="bg-red-600 text-white p-1 rounded hover:bg-red-700"
-                  >
-                    Delete
-                  </button>
-                  <button
-                    onClick={() => setEventToEdit(event)}
-                    className="bg-blue-600 text-white p-1 rounded hover:bg-blue-700"
-                  >
-                    Edit
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+                  Delete
+                </button>
+                <button
+                  onClick={() => setEventToEdit(event)}
+                  className="bg-blue-600 text-white p-1 rounded hover:bg-blue-700"
+                >
+                  Edit
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
