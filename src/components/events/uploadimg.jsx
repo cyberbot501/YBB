@@ -96,10 +96,10 @@ export default function ResultPage() {
                   : event.event_details}
               </p> */}
             <p style={{
-    maxWidth: "500px",
     wordWrap: "break-word",
     whiteSpace: "normal",
-  }} className={`text-gray-800 mt-2 ${expandedEventId === event.id ? "" : "clamp-3"}`}>
+    overflowWrap: "break-word",
+  }} className="max-w-[350px] md:max-w-[500px] text-gray-800 mt-2">
               {event.event_details}
             </p>
               </div>
