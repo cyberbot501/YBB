@@ -95,7 +95,11 @@ export default function ResultPage() {
                   ? `${event.event_details.substring(0, 40)}...`
                   : event.event_details}
               </p> */}
-            <p className={`text-gray-800 mt-2 ${expandedEventId === event.id ? "" : "clamp-3"}`}>
+            <p style={{
+    maxWidth: "500px",
+    wordWrap: "break-word",
+    whiteSpace: "normal",
+  }} className={`text-gray-800 mt-2 ${expandedEventId === event.id ? "" : "clamp-3"}`}>
               {event.event_details}
             </p>
               </div>

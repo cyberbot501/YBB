@@ -4,6 +4,8 @@ import LANDINGPAGE from './pages/landing';
 import EVENTS from './pages/events'
 import PANEL from './pages/adminPanel'
 import BLOG from './pages/blogpanel'
+import BLOGr from './pages/blog'
+import FullBlogDetailPage from "./components/events/blogmore";
 
 export default function Router() {
     const routes = useRoutes([
@@ -29,6 +31,13 @@ export default function Router() {
             element: <BLOG />,
             index: true,
           },
+          {
+            path: "blog",
+            element: <BLOGr />,
+            index: true,
+          },
+
+          {path:"/blog/:id", element: <FullBlogDetailPage />, index: true},
     ]);
     return routes;
 }

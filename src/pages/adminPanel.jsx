@@ -273,7 +273,11 @@ export default function AdminPanel() {
               <td className="px-4 py-2">{event.event_date}</td>
               <td className="px-4 py-2">{event.event_time}</td>
               <td className="px-4 py-2">{event.event_type}</td>
-              <td className="px-4 py-2">{event.event_details}</td>
+              <td style={{
+    maxWidth: "200px",
+    wordWrap: "break-word",
+    whiteSpace: "normal",
+  }} className="px-4 py-2">{event.event_details}</td>
               <td className="px-4 py-2">
                 {event.event_image && (
                   <img

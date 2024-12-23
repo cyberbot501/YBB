@@ -51,17 +51,17 @@ export default function Nav() {
           </NavLink>
         </li>
         <li className='p-2 md:p-0'>
-          <NavLink to='' className='text-[20px] font-roboto font-bold text-white hover:bg-[#6F6B6E] hover:rounded-[65px] px-9 py-4'>
+          <NavLink to='/#about' className='text-[20px] font-roboto font-bold text-white hover:bg-[#6F6B6E] hover:rounded-[65px] px-9 py-4'>
             About Us
           </NavLink>
         </li>
         <li className='p-2 md:p-0'>
-          <NavLink to='' className='text-[20px] font-roboto font-bold text-white hover:bg-[#6F6B6E] hover:rounded-[65px] px-9 py-4'>
+          <NavLink to='/blog' className='text-[20px] font-roboto font-bold text-white hover:bg-[#6F6B6E] hover:rounded-[65px] px-9 py-4'>
             Blog
           </NavLink>
         </li>
         <li className='p-2 md:p-0'>
-          <NavLink to='./events' className='text-[20px] font-roboto font-bold text-white hover:bg-[#6F6B6E] hover:rounded-[65px] px-5 py-4'>
+          <NavLink to='/events' className='text-[20px] font-roboto font-bold text-white hover:bg-[#6F6B6E] hover:rounded-[65px] px-5 py-4'>
             Events
           </NavLink>
         </li>

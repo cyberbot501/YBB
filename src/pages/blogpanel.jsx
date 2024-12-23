@@ -211,8 +211,17 @@ export default function BlogPanel() {
         <tbody>
           {blogs.map((blog) => (
             <tr key={blog.id} className="border-t">
-              <td className="px-4 py-2">{blog.blog_title}</td>
-              <td className="px-4 py-2">{blog.blog_details}</td>
+              <td className="px-4 py-2 ">{blog.blog_title}</td>
+              <td
+  style={{
+    maxWidth: "200px",
+    wordWrap: "break-word",
+    whiteSpace: "normal",
+  }}
+  className="px-4 py-2"
+>
+  {blog.blog_details}
+</td>
               <td className="px-4 py-2">
                 {blog.blog_image && (
                   <img
