@@ -3,6 +3,7 @@ import { useRoutes } from "react-router-dom";
 import LANDINGPAGE from './pages/landing';
 import EVENTS from './pages/events'
 import PANEL from './pages/adminPanel'
+import BLOG from './pages/blogpanel'
 
 export default function Router() {
     const routes = useRoutes([
@@ -21,6 +22,11 @@ export default function Router() {
           {
             path: "panel",
             element: <PANEL />,
+            index: true,
+          },
+          {
+            path: "blogpanel",
+            element: <BLOG />,
             index: true,
           },
     ]);

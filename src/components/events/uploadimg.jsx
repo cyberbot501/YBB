@@ -1,59 +1,171 @@
 import React, { useEffect, useState } from "react";
-import { supabase } from "../../createClinte";
+import { supabase } from "../../createClinte"; // Import Supabase client
+import "../stay.css";
+import Footer from "../../layout/footer/footer";
 
-export default function UserView() {
-  const [users, setUsers] = useState([]);
+export default function ResultPage() {
+  const [events, setEvents] = useState([]); // Store events data
+  const [loading, setLoading] = useState(true); // Loading state
+  const [visibleCount, setVisibleCount] = useState(3); // Number of visible rows
+  const [expandedEventId, setExpandedEventId] = useState(null); // Track expanded event ID
 
+  // Fetch events from Supabase on component load
   useEffect(() => {
-    fetchUsers();
+    async function fetchEvents() {
+      setLoading(true); // Set loading to true
+      const { data, error } = await supabase.from("events").select("*");
+      if (error) {
+        console.error("Error fetching events:", error.message);
+      } else {
+        setEvents(data || []); // Ensure events is an array
+      }
+      setLoading(false); // Set loading to false after data is fetched
+    }
+
+    fetchEvents();
   }, []);
 
-  async function fetchUsers() {
-    const { data, error } = await supabase.from("users").select("name, age, image_url");
-    if (error) console.error("Error fetching users:", error.message);
-    setUsers(data);
-  }
+  const handleSeeMore = () => {
+    setVisibleCount((prevCount) => prevCount + 3); // Show 3 more rows
+  };
+
+  const toggleExpand = (id) => {
+    setExpandedEventId(expandedEventId === id ? null : id); // Toggle expanded card
+  };
 
   return (
-    <div className='bg-[white] flex flex-col md:flex-row items-center justify-center md:gap-[70px] px-[25px] md:px-[40px] pt-[140px] md:pb-6 md:pt-24 overflow-hidden'>
-      <h2>Users</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Image</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user, index) => (
-            <tr key={index}>
-              <td>{user.name}</td>
-              <td>{user.age}</td>
-              <td>
-                {user.image_url && (
+    <div className="">
+      <div className="eventbg h-[200px] w-[100%] flex flex-col items-end gap-3 pt-24 md:px-[180px] px-[20px] mb-6">
+        <h1 className="text-2xl text-[white] font-climate font-bold">EVENTS</h1>
+        <hr className="md:w-[400px] w-[300px]" />
+        <p className="font-inter font-normal text-[10px] md:text-[19px] text-white">
+          FEMALE NETWORK FOUNDATION FOR EMPOWERMENT AND EQUITY
+        </p>
+      </div>
+
+      {loading ? (
+        // Loader
+        <div className="flex justify-center items-center h-64">
+          <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent border-solid rounded-full animate-spin"></div>
+        </div>
+      ) : (
+        <>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-[20px] gap-6 overflow-hidden">
+            {events.slice(0, visibleCount).map((event) => (
+              <div
+                key={event.id}
+                className="border rounded-lg p-4 shadow-md hover:shadow-lg transition cursor-pointer"
+                onClick={() => toggleExpand(event.id)}
+              >
+                {/* Event Image */}
+                {event.event_image ? (
                   <img
-                    src={user.image_url}
-                    alt={user.name}
-                    style={{ width: "100px", height: "100px" }}
+                    src={event.event_image}
+                    alt={event.event_name}
+                    className="w-full h-48 object-cover rounded-lg mb-4"
                   />
+                ) : (
+                  <div className="w-full h-48 bg-gray-200 flex items-center justify-center rounded-lg mb-4">
+                    <span className="text-gray-500">No Image</span>
+                  </div>
                 )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+                {/* Event Details */}
+                <h2 className="text-xl font-semibold mb-2">
+                  {event.event_name}
+                </h2>
+                <div className="flex flex-row justify-between">
+                  <p className="text-gray-600 mb-1">
+                    <strong>Date:</strong> {event.event_date}
+                  </p>
+                  <p className="text-gray-600 mb-1">
+                    <strong>Time:</strong> {event.event_time}
+                  </p>
+                </div>
+                <p className="text-gray-600 mb-1">
+                  <strong>Type:</strong> {event.event_type}
+                </p>
+                              {/* <p
+                className={`text-gray-800 mt-2 w-[400px]  ${
+                  expandedEventId === event.id ? "h-auto" : "h-[50px]"
+                }`}
+              >
+                {expandedEventId === event.id
+                  ? event.event_details
+                  : event.event_details.length > 50
+                  ? `${event.event_details.substring(0, 40)}...`
+                  : event.event_details}
+              </p> */}
+            <p className={`text-gray-800 mt-2 ${expandedEventId === event.id ? "" : "clamp-3"}`}>
+              {event.event_details}
+            </p>
+              </div>
+            ))}
+          </div>
+
+          {/* See More Button */}
+          {visibleCount < events.length && (
+            <div className="flex justify-center mt-6">
+              <button
+                onClick={handleSeeMore}
+                className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+              >
+                See More
+              </button>
+
+
+             
+            </div>
+          )}
+           <div className="pt-[30px] flex flex-col justify-center items-center px-[20px] md:px-[40px] gap-10  py-14 overflow-hidden">
+                <div className="flex flex-col items-center gap-4 px-5 md:px-0 ">
+                  <p className="w-[100%] md:w-[1070px] font-inter font-normal text-[16px] ">We’d love to hear from you! whether you have questions, idea, comments, or suggestion please fill out and summit the contact form below
+                  for more information about the Female Network Foundation And Equity</p>
+                  <p className="w-[100%] md:w-[1070px] font-inter font-normal text-[16px] ">call: +2349024208159</p>
+                  <p className="w-[100%] md:w-[1070px] font-inter font-normal text-[16px] ">Email: fnfeefoundation001@yahoo.com</p>
+                </div>
+
+
+                <form action="" className='flex flex-col justify-center items-center md:items-start gap-7'>
+            <label htmlFor="">
+               
+                <input type="text" id="fname" name="fname" placeholder="Full Name" className='md:w-[971px] border-[2px] border-black w-[300px] h-[52px] px-3'/>
+            </label>
+
+            <label htmlFor="">
+               
+                <input type="email" id="fname" name="fname" placeholder="Email Address" className='md:w-[971px] border-[2px] border-black w-[300px] h-[52px] px-3'/>
+            </label>
+
+
+            <label htmlFor="">
+                
+                <input type="number" id="fname" name="fname" placeholder="Phone Number" className='md:w-[971px] border-[2px] border-black w-[300px] h-[52px] px-3 '/>
+            </label>
+
+            <label htmlFor="">
+                
+                <textarea type="text" id="fname" name="fname" placeholder="Your Message" className='md:w-[971px] border-[2px] border-black w-[300px] h-[182px] px-3 '/>
+            </label>
+
+           
+
+            <button className='bg-[#FF004F] w-[231px] h-[44px] text-white font-roboto font-light text-[23px] rounded-[17px] '>SUBMIT</button>
+         </form>
+              </div>
+
+
+
+              <div className="stayss flex flex-col justify-center items-center px-[20px] md:px-[40px]  overflow-hidden">
+                  <div className="flex flex-col justify-center items-center pt-5 md:pt-0 md:pb-10 pb-5 md:py-20 gap-5 md:gap-8">  
+                    <h2 className="text-[24px] font-inter font-medium  text-white ">PARTNER WITH US</h2>
+                    <p className="text-[20px] font-inter font-normal text-white w-[100%] md:w-[900px] text-center md:text-[start] ">Join us in this exciting journey as we change the African narrative through empowering African Females and contributing to its development space.</p>
+                    <button className="bg-[#5D1C51] text-white  w-[200px] h-[50px] rounded-[10px]">BECOME A PARTNER</button>
+                  </div>
+              </div>
+
+          <Footer />
+        </>
+      )}
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-

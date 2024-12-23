@@ -2,6 +2,21 @@
     background-image: url('../assets/Frame\ 3.svg');
 }
 
+.stayss{
+    background-image: url('../assets/stayss.svg');
+}
+
 .mand{
     background-image: url('../assets/image\ 6.svg');
 }
+
+.eventbg{
+    background-image: url('../assets/eventbg.svg');
+}
+
+.clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }

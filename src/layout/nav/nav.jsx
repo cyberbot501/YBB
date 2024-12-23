@@ -46,18 +46,18 @@ export default function Nav() {
         } absolute top-[100px] right-0 bg-[#00000060] md: md:bg-[#00000060] md:static md:flex flex-col md:flex-row w-full md:w-[500px] h-auto md:h-[60px] justify-evenly items-center md:rounded-[65px] transition-all duration-300 ease-in-out`}
       >
         <li className='p-2 md:p-0'>
-          <NavLink to='' className='text-[20px] font-roboto font-bold text-white hover:bg-[#6F6B6E] hover:w-[300px] hover:rounded-[65px] px-9 py-4'>
-            About
+          <NavLink to='/' className='text-[20px] font-roboto font-bold text-white hover:bg-[#6F6B6E] hover:w-[300px] hover:rounded-[65px] px-9 py-4'>
+            Home
+          </NavLink>
+        </li>
+        <li className='p-2 md:p-0'>
+          <NavLink to='' className='text-[20px] font-roboto font-bold text-white hover:bg-[#6F6B6E] hover:rounded-[65px] px-9 py-4'>
+            About Us
           </NavLink>
         </li>
         <li className='p-2 md:p-0'>
           <NavLink to='' className='text-[20px] font-roboto font-bold text-white hover:bg-[#6F6B6E] hover:rounded-[65px] px-9 py-4'>
             Blog
-          </NavLink>
-        </li>
-        <li className='p-2 md:p-0'>
-          <NavLink to='' className='text-[20px] font-roboto font-bold text-white hover:bg-[#6F6B6E] hover:rounded-[65px] px-9 py-4'>
-            Donate
           </NavLink>
         </li>
         <li className='p-2 md:p-0'>
