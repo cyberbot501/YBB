@@ -44,13 +44,16 @@ export default function AdminPanel() {
       console.error("Error uploading image:", error.message);
       return null;
     }
+    
 
     const { publicUrl } = supabase.storage
       .from("user-bucket")
       .getPublicUrl(fileName);
+      
 
     return publicUrl;
   }
+  
 
   async function createEvent(event) {
     event.preventDefault();
@@ -67,6 +70,7 @@ export default function AdminPanel() {
       event_type: newEvent.event_type,
       event_image: imageUrl,
     });
+    console.log("Image URL:", imageUrl);  
 
     if (error) {
       console.error("Error creating event:", error.message);

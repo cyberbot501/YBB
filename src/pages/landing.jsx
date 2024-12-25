@@ -7,14 +7,29 @@ import Core from '../components/core'
 import Ourleader from '../components/ourlearders'
 import Footer from '../layout/footer/footer'
 import Stay from '../components/stay'
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
-export default function landing() {
+
+
+export default function Landing() {
+
+  const location = useLocation();
+
+  useEffect(() => {
+      if (location.hash) {
+          const section = document.querySelector(location.hash);
+          if (section) {
+              section.scrollIntoView({ behavior: 'smooth' });
+          }
+      }
+  }, [location]);
   return (
     <div>
 
       <Nav />
       <Hero />
-      <About />
+      <section id="about"><About /></section>
       <MandV />
       <Core />
       <Ourleader />
