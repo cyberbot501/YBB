@@ -52,7 +52,7 @@ export default function Nav() {
         </li>
         <li className='p-2 md:p-0'>
           <NavLink to="/#about" className='text-[20px] font-roboto font-bold text-white hover:bg-[#6F6B6E] hover:rounded-[65px] px-9 py-4'>
-            About Us
+            About
           </NavLink>
         </li>
         <li className='p-2 md:p-0'>

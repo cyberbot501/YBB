@@ -52,17 +52,17 @@ export default function FullBlogDetailPage() {
     <div className="max-w-4xl mx-auto p-4">
       <h1 className="text-3xl font-bold mb-6">{blog.blog_title}</h1>
       <div className="mb-4">
-        {blog.blog_image ? (
-          <img
-            src={blog.blog_image}
-            alt={blog.blog_title}
-            className="w-full h-64 object-cover rounded-md"
-          />
-        ) : (
-          <div className="w-full h-64 bg-gray-200 text-gray-500 flex items-center justify-center rounded-md">
-            No Image
-          </div>
-        )}
+      {blog.blog_image && blog.blog_image.startsWith('http') ? (
+  <img
+    src={blog.blog_image}
+    alt={blog.blog_title}
+    className="w-full h-64 object-cover rounded-md"
+  />
+) : (
+  <div className="w-full h-64 bg-gray-200 text-gray-500 flex items-center justify-center rounded-md">
+    No Image
+  </div>
+)}
       </div>
       <p>{blog.blog_details}</p>
     </div>
