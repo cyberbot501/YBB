@@ -29,7 +29,6 @@ function Blog() {
       <Nav />
       
         <Blogs />
-        
       
     </div>
   );
