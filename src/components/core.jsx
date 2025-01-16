@@ -1,6 +1,7 @@
 import React from 'react'
 import image1 from '../assets/chart.svg'
-import image2 from '../assets/Group 4.svg'
+import image2 from '../assets/24yes.svg'
+import image3 from '../assets/24yes2.svg'
 
 export default function core() {
 
@@ -29,9 +30,12 @@ export default function core() {
         </div>
         </div>
 
-        <div className='px-[20px] md:px-[40px] overflow-hidden flex flex-col md:flex-row justify-center items-center md:gap-2'>
+        <div className='px-[20px] md:px-[40px] overflow-hidden flex flex-col md:flex-col justify-center items-center md:gap-2'>
             <img src={image1} alt="" className='md:w-[600px] md:h-[569px] '/>
-            <img src={image2} alt="" className='md:w-[600px] md:h-[569px]'/>
+            <div className ='px-[20px] md:px-[40px] overflow-hidden flex flex-row md:flex-row justify-center items-center'>
+                 <img src={image2} alt="" className='md:w-[600px] md:h-[569px]'/>
+                 <img src={image3} alt="" className='md:w-[600px] md:h-[569px]'/>
+            </div>
         </div>
     </div>
   )

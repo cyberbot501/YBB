@@ -68,8 +68,16 @@ export default function Blogs() {
   }
 
   return (
+    <div><div className="eventbg h-[200px] w-[100%] flex flex-col items-end gap-3 pt-24 md:px-[180px] px-[20px] mb-6">
+    <h1 className="text-2xl text-[white] font-climate font-bold">BLOGS</h1>
+    <hr className="md:w-[400px] w-[300px]" />
+    <p className="font-inter font-normal text-[10px] md:text-[19px] text-white">
+      FEMALE NETWORK FOUNDATION FOR EMPOWERMENT AND EQUITY
+    </p>
+  </div>
+
     <div className={`relative max-w-4xl mx-auto p-4 ${selectedBlog ? "" : ""}`}>
-      <h1 className="text-3xl font-bold mb-6">Blogs</h1>
+      {/* <h1 className="text-3xl font-bold mb-6">Blogs</h1> */}
       <ul>
         {blogs.slice(0, visibleCount).map((blog) => (
           <li
@@ -138,7 +146,12 @@ export default function Blogs() {
                 className="w-full h-auto rounded-md mb-4"
               />
             )}
-            <p className="text-gray-700 mb-4">{selectedBlog.blog_details}</p>
+            <p  style={{
+                  wordWrap: "break-word",
+                  whiteSpace: "normal",
+                  overflowWrap: "break-word",
+                }}
+                className="text-gray-700 max-w-[350px] md:max-w-[500px]">{selectedBlog.blog_details}</p>
             <button
               className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
               onClick={closeModal}
@@ -148,6 +161,7 @@ export default function Blogs() {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 }

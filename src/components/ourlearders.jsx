@@ -4,6 +4,7 @@ import felix from '../assets/felix.svg'
 import esther from '../assets/esther.svg'
 import ileri from '../assets/ileri.svg'
 import precious from '../assets/precious.svg'
+import olamide from '../assets/Olamide.svg'
 import image1 from '../assets/pop.svg'
 import image2 from '../assets/faq.svg'
 import image3 from '../assets/wri.svg'
@@ -15,7 +16,7 @@ export default function ourlearders() {
         { title: kola, name:'Oluwaseun Kola Akinola', role: 'FOUNDER'},
         { title: felix, name:'Felix O Ajifowobaje ', role: 'CHAIRMAN TRUSTEE'},
         { title: esther, name:'Esther Ademoroti', role: 'BOARD MEMBER'},
-        { title: kola, name:'Kola', role: 'ADVISORY BOARD MEMBER'},
+        { title: olamide, name:'Olamide Alao Akala', role: 'ADVISORY BOARD MEMBER'},
         { title: precious, name:'Precious.A Akinyede', role: 'SECRETARY'},
         { title: ileri, name:'Ayomide Ilori', role: 'BYT COMMUNITY MANAGER'}
         ]

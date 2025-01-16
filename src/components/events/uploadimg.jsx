@@ -7,49 +7,75 @@ import contact from "../../assets/Contact.svg";
 import rsvp from "../../assets/rsvp.svg";
 import { useLocation } from "react-router-dom";
 
+// Modal Component
+const Modal = ({ isOpen, onClose, content }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+      <div className="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full">
+        <button
+          onClick={onClose}
+          className="text-gray-500 hover:text-gray-800 float-right"
+        >
+          Close
+        </button>
+        <h2 className="text-lg font-semibold mb-4">Full Event Details</h2>
+        <p className="text-gray-800 break-words">{content}</p>
+      </div>
+    </div>
+  );
+};
+
 export default function ResultPage() {
   const [events, setEvents] = useState([]); // Store events data
   const [loading, setLoading] = useState(true); // Loading state
   const [visibleCount, setVisibleCount] = useState(3); // Number of visible rows
-  const [expandedEventId, setExpandedEventId] = useState(null); // Track expanded event ID
+  const [modalContent, setModalContent] = useState(""); // Content for modal
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modal open state
 
-   const location = useLocation();
+  const location = useLocation();
 
   useEffect(() => {
-      if (location.hash) {
-          const section = document.querySelector(location.hash);
-          if (section) {
-              section.scrollIntoView({ behavior: 'smooth' });
-          }
+    if (location.hash) {
+      const section = document.querySelector(location.hash);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
       }
+    }
   }, [location]);
 
-  // Fetch events from Supabase on component load
   useEffect(() => {
     async function fetchEvents() {
-      setLoading(true); // Set loading to true
+      setLoading(true);
       const { data, error } = await supabase.from("events").select("*");
       if (error) {
         console.error("Error fetching events:", error.message);
       } else {
-        setEvents(data || []); // Ensure events is an array
+        setEvents(data || []);
       }
-      setLoading(false); // Set loading to false after data is fetched
+      setLoading(false);
     }
 
     fetchEvents();
   }, []);
 
   const handleSeeMore = () => {
-    setVisibleCount((prevCount) => prevCount + 3); // Show 3 more rows
+    setVisibleCount((prevCount) => prevCount + 3);
   };
 
-  const toggleExpand = (id) => {
-    setExpandedEventId(expandedEventId === id ? null : id); // Toggle expanded card
+  const handleOpenModal = (content) => {
+    setModalContent(content);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setModalContent("");
   };
 
   return (
-    <div className="">
+    <div>
       <div className="eventbg h-[200px] w-[100%] flex flex-col items-end gap-3 pt-24 md:px-[180px] px-[20px] mb-6">
         <h1 className="text-2xl text-[white] font-climate font-bold">EVENTS</h1>
         <hr className="md:w-[400px] w-[300px]" />
@@ -59,7 +85,6 @@ export default function ResultPage() {
       </div>
 
       {loading ? (
-        // Loader
         <div className="flex justify-center items-center h-64">
           <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent border-solid rounded-full animate-spin"></div>
         </div>
@@ -70,9 +95,7 @@ export default function ResultPage() {
               <div
                 key={event.id}
                 className="border rounded-lg p-4 shadow-md hover:shadow-lg transition cursor-pointer"
-                onClick={() => toggleExpand(event.id)}
               >
-                {/* Event Image */}
                 {event.event_image ? (
                   <img
                     src={event.event_image}
@@ -84,7 +107,6 @@ export default function ResultPage() {
                     <span className="text-gray-500">No Image</span>
                   </div>
                 )}
-                {/* Event Details */}
                 <h2 className="text-xl font-semibold mb-2">
                   {event.event_name}
                 </h2>
@@ -99,29 +121,19 @@ export default function ResultPage() {
                 <p className="text-gray-600 mb-1">
                   <strong>Type:</strong> {event.event_type}
                 </p>
-                              {/* <p
-                className={`text-gray-800 mt-2 w-[400px]  ${
-                  expandedEventId === event.id ? "h-auto" : "h-[50px]"
-                }`}
-              >
-                {expandedEventId === event.id
-                  ? event.event_details
-                  : event.event_details.length > 50
-                  ? `${event.event_details.substring(0, 40)}...`
-                  : event.event_details}
-              </p> */}
-            <p style={{
-    wordWrap: "break-word",
-    whiteSpace: "normal",
-    overflowWrap: "break-word",
-  }} className="max-w-[350px] md:max-w-[500px] text-gray-800 mt-2">
-              {event.event_details}
-            </p>
+                <p
+                  className="text-gray-700 max-w-[350px] md:max-w-[500px] break-words whitespace-pre-wrap "
+                  onClick={() => handleOpenModal(event.event_details)}
+                >
+                  {event.event_details.split(" ").length > 20
+    ? `${event.event_details.split(" ").slice(0, 20).join(" ")}...`
+    : event.event_details}
+                 
+                </p>
               </div>
             ))}
           </div>
 
-          {/* See More Button */}
           {visibleCount < events.length && (
             <div className="flex justify-center mt-6">
               <button
@@ -130,12 +142,12 @@ export default function ResultPage() {
               >
                 See More
               </button>
-
-
-             
             </div>
           )}
-           <div className="pt-[30px] flex flex-col justify-center items-center px-[20px] md:px-[40px] gap-10  py-14 overflow-hidden">
+
+
+
+<div className="pt-[30px] flex flex-col justify-center items-center px-[20px] md:px-[40px] gap-10  py-14 overflow-hidden">
                 <div className="flex flex-col items-center gap-4 px-5 md:px-0 ">
                   <p className="w-[100%] md:w-[1070px] font-inter font-normal text-[16px] ">We’d love to hear from you! whether you have questions, idea, comments, or suggestion please fill out and summit the contact form below
                   for more information about the Female Network Foundation And Equity</p>
@@ -226,181 +238,13 @@ export default function ResultPage() {
               </div>
 
           <Footer />
+          <Modal
+            isOpen={isModalOpen}
+            onClose={handleCloseModal}
+            content={modalContent}
+          />
         </>
       )}
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useEffect, useState } from "react";
-// import { supabase } from "../../createClinte"; // Import Supabase client
-// import "../stay.css";
-// import Footer from "../../layout/footer/footer";
-// import donate from "../../assets/donation.svg";
-// import contact from "../../assets/Contact.svg";
-// import rsvp from "../../assets/rsvp.svg";
-// import { useLocation } from "react-router-dom";
-
-// // Modal Component
-// const Modal = ({ isOpen, onClose, content }) => {
-//   if (!isOpen) return null;
-
-//   return (
-//     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-//       <div className="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full">
-//         <button
-//           onClick={onClose}
-//           className="text-gray-500 hover:text-gray-800 float-right"
-//         >
-//           Close
-//         </button>
-//         <h2 className="text-lg font-semibold mb-4">Full Event Details</h2>
-//         <p className="text-gray-800">{content}</p>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default function ResultPage() {
-//   const [events, setEvents] = useState([]); // Store events data
-//   const [loading, setLoading] = useState(true); // Loading state
-//   const [visibleCount, setVisibleCount] = useState(3); // Number of visible rows
-//   const [modalContent, setModalContent] = useState(""); // Content for modal
-//   const [isModalOpen, setIsModalOpen] = useState(false); // Modal open state
-
-//   const location = useLocation();
-
-//   useEffect(() => {
-//     if (location.hash) {
-//       const section = document.querySelector(location.hash);
-//       if (section) {
-//         section.scrollIntoView({ behavior: "smooth" });
-//       }
-//     }
-//   }, [location]);
-
-//   useEffect(() => {
-//     async function fetchEvents() {
-//       setLoading(true);
-//       const { data, error } = await supabase.from("events").select("*");
-//       if (error) {
-//         console.error("Error fetching events:", error.message);
-//       } else {
-//         setEvents(data || []);
-//       }
-//       setLoading(false);
-//     }
-
-//     fetchEvents();
-//   }, []);
-
-//   const handleSeeMore = () => {
-//     setVisibleCount((prevCount) => prevCount + 3);
-//   };
-
-//   const handleOpenModal = (content) => {
-//     setModalContent(content);
-//     setIsModalOpen(true);
-//   };
-
-//   const handleCloseModal = () => {
-//     setIsModalOpen(false);
-//     setModalContent("");
-//   };
-
-//   return (
-//     <div>
-//       <div className="eventbg h-[200px] w-[100%] flex flex-col items-end gap-3 pt-24 md:px-[180px] px-[20px] mb-6">
-//         <h1 className="text-2xl text-[white] font-climate font-bold">EVENTS</h1>
-//         <hr className="md:w-[400px] w-[300px]" />
-//         <p className="font-inter font-normal text-[10px] md:text-[19px] text-white">
-//           FEMALE NETWORK FOUNDATION FOR EMPOWERMENT AND EQUITY
-//         </p>
-//       </div>
-
-//       {loading ? (
-//         <div className="flex justify-center items-center h-64">
-//           <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent border-solid rounded-full animate-spin"></div>
-//         </div>
-//       ) : (
-//         <>
-//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-[20px] gap-6 overflow-hidden">
-//             {events.slice(0, visibleCount).map((event) => (
-//               <div
-//                 key={event.id}
-//                 className="border rounded-lg p-4 shadow-md hover:shadow-lg transition cursor-pointer"
-//               >
-//                 {event.event_image ? (
-//                   <img
-//                     src={event.event_image}
-//                     alt={event.event_name}
-//                     className="w-full h-48 object-cover rounded-lg mb-4"
-//                   />
-//                 ) : (
-//                   <div className="w-full h-48 bg-gray-200 flex items-center justify-center rounded-lg mb-4">
-//                     <span className="text-gray-500">No Image</span>
-//                   </div>
-//                 )}
-//                 <h2 className="text-xl font-semibold mb-2">
-//                   {event.event_name}
-//                 </h2>
-//                 <div className="flex flex-row justify-between">
-//                   <p className="text-gray-600 mb-1">
-//                     <strong>Date:</strong> {event.event_date}
-//                   </p>
-//                   <p className="text-gray-600 mb-1">
-//                     <strong>Time:</strong> {event.event_time}
-//                   </p>
-//                 </div>
-//                 <p className="text-gray-600 mb-1">
-//                   <strong>Type:</strong> {event.event_type}
-//                 </p>
-//                 <p
-//                   className="text-gray-800 mt-2 cursor-pointer"
-//                   onClick={() => handleOpenModal(event.event_details)}
-//                 >
-//                   {event.event_details.split(" ").length > 50
-//                     ? `${event.event_details.split(" ").slice(0, 50).join(" ")}...`
-//                     : event.event_details}{" "}
-//                   <span className="text-blue-500 underline">Read More</span>
-//                 </p>
-//               </div>
-//             ))}
-//           </div>
-
-//           {visibleCount < events.length && (
-//             <div className="flex justify-center mt-6">
-//               <button
-//                 onClick={handleSeeMore}
-//                 className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
-//               >
-//                 See More
-//               </button>
-//             </div>
-//           )}
-
-//           <Footer />
-//           <Modal
-//             isOpen={isModalOpen}
-//             onClose={handleCloseModal}
-//             content={modalContent}
-//           />
-//         </>
-//       )}
-//     </div>
-//   );
-// }
