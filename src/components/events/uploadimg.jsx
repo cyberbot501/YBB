@@ -126,9 +126,11 @@ export default function ResultPage() {
                   onClick={() => handleOpenModal(event.event_details)}
                 >
                   {event.event_details.split(" ").length > 20
-    ? `${event.event_details.split(" ").slice(0, 20).join(" ")}...`
-    : event.event_details}
-                 
+                    ? `${event.event_details
+                        .split(" ")
+                        .slice(0, 20)
+                        .join(" ")}...`
+                    : event.event_details}
                 </p>
               </div>
             ))}
@@ -145,97 +147,145 @@ export default function ResultPage() {
             </div>
           )}
 
+          <div className="pt-[30px] flex flex-col justify-center items-center px-[20px] md:px-[40px] gap-10  py-14 overflow-hidden">
+            <div className="flex flex-col items-center gap-4 px-5 md:px-0 ">
+              <p className="w-[100%] md:w-[1070px] font-inter font-normal text-[16px] ">
+                We’d love to hear from you! whether you have questions, idea,
+                comments, or suggestion please fill out and summit the contact
+                form below for more information about the Female Network
+                Foundation And Equity
+              </p>
+              <p className="w-[100%] md:w-[1070px] font-inter font-normal text-[16px] ">
+                call: +2349024208159
+              </p>
+              <p className="w-[100%] md:w-[1070px] font-inter font-normal text-[16px] ">
+                Email: fnfeefoundation001@yahoo.com
+              </p>
+            </div>
 
+            <form
+              action=""
+              className="flex flex-col justify-center items-center md:items-start gap-7"
+            >
+              <label htmlFor="">
+                <input
+                  type="text"
+                  id="fname"
+                  name="fname"
+                  placeholder="Full Name"
+                  className="md:w-[971px] border-[2px] border-black w-[300px] h-[52px] px-3"
+                />
+              </label>
 
-<div className="pt-[30px] flex flex-col justify-center items-center px-[20px] md:px-[40px] gap-10  py-14 overflow-hidden">
-                <div className="flex flex-col items-center gap-4 px-5 md:px-0 ">
-                  <p className="w-[100%] md:w-[1070px] font-inter font-normal text-[16px] ">We’d love to hear from you! whether you have questions, idea, comments, or suggestion please fill out and summit the contact form below
-                  for more information about the Female Network Foundation And Equity</p>
-                  <p className="w-[100%] md:w-[1070px] font-inter font-normal text-[16px] ">call: +2349024208159</p>
-                  <p className="w-[100%] md:w-[1070px] font-inter font-normal text-[16px] ">Email: fnfeefoundation001@yahoo.com</p>
-                </div>
+              <label htmlFor="">
+                <input
+                  type="email"
+                  id="fname"
+                  name="fname"
+                  placeholder="Email Address"
+                  className="md:w-[971px] border-[2px] border-black w-[300px] h-[52px] px-3"
+                />
+              </label>
 
+              <label htmlFor="">
+                <input
+                  type="number"
+                  id="fname"
+                  name="fname"
+                  placeholder="Phone Number"
+                  className="md:w-[971px] border-[2px] border-black w-[300px] h-[52px] px-3 "
+                />
+              </label>
 
-                <form action="" className='flex flex-col justify-center items-center md:items-start gap-7'>
-            <label htmlFor="">
-               
-                <input type="text" id="fname" name="fname" placeholder="Full Name" className='md:w-[971px] border-[2px] border-black w-[300px] h-[52px] px-3'/>
-            </label>
+              <label htmlFor="">
+                <textarea
+                  type="text"
+                  id="fname"
+                  name="fname"
+                  placeholder="Your Message"
+                  className="md:w-[971px] border-[2px] border-black w-[300px] h-[182px] px-3 "
+                />
+              </label>
 
-            <label htmlFor="">
-               
-                <input type="email" id="fname" name="fname" placeholder="Email Address" className='md:w-[971px] border-[2px] border-black w-[300px] h-[52px] px-3'/>
-            </label>
+              <button className="bg-[#FF004F] w-[231px] h-[44px] text-white font-roboto font-light text-[23px] rounded-[17px] ">
+                SUBMIT
+              </button>
+            </form>
+          </div>
 
-
-            <label htmlFor="">
-                
-                <input type="number" id="fname" name="fname" placeholder="Phone Number" className='md:w-[971px] border-[2px] border-black w-[300px] h-[52px] px-3 '/>
-            </label>
-
-            <label htmlFor="">
-                
-                <textarea type="text" id="fname" name="fname" placeholder="Your Message" className='md:w-[971px] border-[2px] border-black w-[300px] h-[182px] px-3 '/>
-            </label>
-
-           
-
-            <button className='bg-[#FF004F] w-[231px] h-[44px] text-white font-roboto font-light text-[23px] rounded-[17px] '>SUBMIT</button>
-         </form>
+          <section id="donatee">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-[20px] py-10 gap-6 overflow-hidden">
+              <div className="border rounded-lg p-4 shadow-md hover:shadow-lg transition cursor-pointer flex flex-col justify-center items-center">
+                <img
+                  src={donate}
+                  alt={donate}
+                  className="w-full h-48 object-cover rounded-lg mb-4"
+                />
+                '
+                <h2 className="text-xl text-center font-climate font-bold mb-2">
+                  DONATE
+                </h2>
+                <a
+                  href="https://wa.me/9024208159"
+                  className="text-xl text-center font-semibold font-roboto text-[#FF004F] mb-2"
+                >
+                  Support Our Activites
+                </a>
               </div>
 
+              <div className="border rounded-lg p-4 shadow-md hover:shadow-lg transition cursor-pointer flex flex-col justify-center items-center">
+                <img
+                  src={contact}
+                  alt={contact}
+                  className="w-full h-48 object-cover rounded-lg mb-4"
+                />
 
-              <section id="donatee"><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-[20px] py-10 gap-6 overflow-hidden">
-             <div
-               
-                className="border rounded-lg p-4 shadow-md hover:shadow-lg transition cursor-pointer flex flex-col justify-center items-center">
-                  <img
-                    src={donate}
-                    alt={donate}
-                    className="w-full h-48 object-cover rounded-lg mb-4"
-                  />
-
-                  '<h2 className="text-xl text-center font-climate font-bold mb-2">DONATE</h2>
-                  <a href="https://wa.me/9024208159" className="text-xl text-center font-semibold font-roboto text-[#FF004F] mb-2">Support Our Activites</a>
-                </div>
-
-                <div
-               
-               className="border rounded-lg p-4 shadow-md hover:shadow-lg transition cursor-pointer flex flex-col justify-center items-center">
-                 <img
-                   src={contact}
-                   alt={contact}
-                   className="w-full h-48 object-cover rounded-lg mb-4"
-                 />
-
-                 <h2 className="text-xl text-center font-climate font-bold mb-2">CONTACT US</h2>
-                 <a href="https://wa.me/9024208159" className="text-xl text-center font-semibold font-roboto text-[#FF004F] mb-2">Get In Touch Today!</a>
-               </div>
-
-
-               <div
-               
-               className="border rounded-lg p-4 shadow-md hover:shadow-lg transition cursor-pointer flex flex-col justify-center items-center">
-                 <img
-                   src={rsvp}
-                   alt={rsvp}
-                   className="w-full h-48 object-cover rounded-lg mb-4"
-                 />
-
-                 <h2 className="text-xl text-center font-climate font-bold mb-2">RSVP</h2>
-                 <a href="https://wa.me/9024208159" className="text-xl text-center font-semibold font-roboto text-[#FF004F] mb-2">Register For Events & Program</a>
-               </div>
-              </div></section>
-
-
-
-              <div className="stayss flex flex-col justify-center items-center px-[20px] md:px-[40px]  overflow-hidden">
-                  <div className="flex flex-col justify-center items-center pt-5 md:pt-0 md:pb-10 pb-5 md:py-20 gap-5 md:gap-8">  
-                    <h2 className="text-[24px] font-inter font-medium pt-10  text-white ">PARTNER WITH US</h2>
-                    <p className="text-[20px] font-inter font-normal text-white w-[100%] md:w-[900px] text-center md:text-[start] ">Join us in this exciting journey as we change the African narrative through empowering African Females and contributing to its development space.</p>
-                    <button className="bg-[#5D1C51] text-white  w-[200px] h-[50px] rounded-[10px]">BECOME A PARTNER</button>
-                  </div>
+                <h2 className="text-xl text-center font-climate font-bold mb-2">
+                  CONTACT US
+                </h2>
+                <a
+                  href="https://wa.me/9024208159"
+                  className="text-xl text-center font-semibold font-roboto text-[#FF004F] mb-2"
+                >
+                  Get In Touch Today!
+                </a>
               </div>
+
+              <div className="border rounded-lg p-4 shadow-md hover:shadow-lg transition cursor-pointer flex flex-col justify-center items-center">
+                <img
+                  src={rsvp}
+                  alt={rsvp}
+                  className="w-full h-48 object-cover rounded-lg mb-4"
+                />
+
+                <h2 className="text-xl text-center font-climate font-bold mb-2">
+                  RSVP
+                </h2>
+                <a
+                  href="https://wa.me/9024208159"
+                  className="text-xl text-center font-semibold font-roboto text-[#FF004F] mb-2"
+                >
+                  Register For Events & Program
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <div className="stayss flex flex-col justify-center items-center px-[20px] md:px-[40px]  overflow-hidden">
+            <div className="flex flex-col justify-center items-center pt-5 md:pt-0 md:pb-10 pb-5 md:py-20 gap-5 md:gap-8">
+              <h2 className="text-[24px] font-inter font-medium pt-10  text-white ">
+                PARTNER WITH US
+              </h2>
+              <p className="text-[20px] font-inter font-normal text-white w-[100%] md:w-[900px] text-center md:text-[start] ">
+                Join us in this exciting journey as we change the African
+                narrative through empowering African Females and contributing to
+                its development space.
+              </p>
+              <button className="bg-[#5D1C51] text-white  w-[200px] h-[50px] rounded-[10px]">
+                BECOME A PARTNER
+              </button>
+            </div>
+          </div>
 
           <Footer />
           <Modal
