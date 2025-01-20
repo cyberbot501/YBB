@@ -131,7 +131,7 @@ export default function Blogs() {
       {/* Modal */}
       {selectedBlog && (
         <div
-          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 px-[20px]"
           onClick={closeModal}
         >
           <div
