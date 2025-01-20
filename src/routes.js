@@ -7,6 +7,7 @@ import BLOG from './pages/blogpanel'
 import BLOGr from './pages/blog'
 import FullBlogDetailPage from "./components/events/blogmore";
 import LOGINEVENT from "./pages/login"
+import LOGINB from "./pages/loginb"
 
 export default function Router() {
     const routes = useRoutes([
@@ -40,6 +41,11 @@ export default function Router() {
           {
             path: "loginevent",
             element: <LOGINEVENT />,
+            index: true,
+          },
+          {
+            path: "loginblog",
+            element: <LOGINB />,
             index: true,
           },
 
