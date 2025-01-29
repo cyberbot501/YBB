@@ -27,7 +27,7 @@ export default function Nav() {
   return (
     <div
       className={`fixed top-0 px-[10px] md:px-[40px]  z-10 w-full flex flex-row justify-center gap-[155px] items-center h-[100px] transition-all duration-300 ease-in-out ${
-        scroll ? 'bg-[#6F6B6E]' : 'bg-transparent'
+        scroll ? 'bg-[#ffffff] border-b-2 shadow-2xl' : 'bg-transparent'
       }`}
     >
       <img src={logo} alt="logo" className='w-[187px] h-[90px]' />
@@ -43,7 +43,7 @@ export default function Nav() {
       <ul
         className={`${
           menuOpen ? 'block' : 'hidden'
-        } absolute top-[100px] right-0 bg-[#00000060] md: md:bg-[#00000060] md:static md:flex flex-col md:flex-row w-full md:w-[640px] h-auto md:h-[60px] justify-evenly items-center md:rounded-[65px] transition-all duration-300 ease-in-out`}
+        } absolute top-[100px] right-0 bg-[#9B2B87] md: md:bg-[#00000060] md:static md:flex flex-col md:flex-row w-full md:w-[640px] h-auto md:h-[60px] justify-evenly items-center md:rounded-[65px] transition-all duration-300 ease-in-out`}
       >
         <li className='p-2 md:p-0'>
           <NavLink to='/' className='text-[20px] font-roboto font-bold text-white hover:bg-[#6F6B6E] hover:w-[300px] hover:rounded-[65px] px-9 py-4'>
@@ -66,7 +66,7 @@ export default function Nav() {
           </NavLink>
         </li>
         <li className='p-2 md:p-0'>
-          <NavLink to='/events' className='text-[20px] font-roboto font-bold text-white hover:bg-[#6F6B6E] hover:rounded-[65px] px-5 py-4'>
+          <NavLink to='/events' className='text-[20px] font-roboto font-bold text-white hover:bg-[#6F6B6E] hover:rounded-[65px] px-9 py-4'>
             Events
           </NavLink>
         </li>
