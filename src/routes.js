@@ -5,10 +5,9 @@ import EVENTS from './pages/events'
 import PANEL from './pages/adminPanel'
 import BLOG from './pages/blogpanel'
 import BLOGr from './pages/blog'
-import FullBlogDetailPage from "./components/events/blogmore";
 import LOGINEVENT from "./pages/login"
 import LOGINB from "./pages/loginb"
-
+import PostPage from "./pages/seeblog"
 export default function Router() {
     const routes = useRoutes([
         {
@@ -49,7 +48,10 @@ export default function Router() {
             index: true,
           },
 
-          {path:"/blog/:id", element: <FullBlogDetailPage />, index: true},
+          {
+            path: "post/:slug" ,
+            element: <PostPage />,
+            index: true,
+          },
     ]);
-    return routes;
-}
+    return routes;}
