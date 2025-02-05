@@ -10,20 +10,20 @@ export default function About() {
   };
 
   return (
-    <div className='bg-[#00000030] px-[25px] md:px-[40px] flex flex-col justify-center items-center overflow-x-hidden'>
-      <div className='md:w-[1200px] w-[100%] h-[53px] md:gap-48 bg-[40px] gap-3 bg-[#6F6B6E] my-[20px] flex flex-row justify-center items-center rounded-[30px]'>
+    <div className='bg-[#00000030] px-[25px] py-10 md:px-[40px] gap-8 flex flex-col justify-center items-center overflow-x-hidden'>
+      <div className='lg:w-[1200px] w-[100%] h-[53px]  bg-[40px] gap-3 bg-[#6F6B6E]  flex flex-row justify-evenly items-center rounded-[30px]'>
         <NavLink className='font-roboto font-semibold text-white text-[12px] md:text-[21px]'>About FNFEE</NavLink>
         <NavLink className='font-roboto font-semibold text-white text-[12px] md:text-[21px]'>Mission & Vision</NavLink>
         <NavLink className='font-roboto font-semibold text-white text-[12px] md:text-[21px]'>Leadership</NavLink>
       </div>
 
-      <h1 className='font-roboto font-bold text-[#6F6B6E] md:text-[26px] pb-5 md:pb-10'>ABOUT <span className='text-[#9B2B87]'>FNFEE</span></h1>
+      <h1 className='font-roboto font-bold text-[#6F6B6E] md:text-[26px] md:pb-10'>ABOUT <span className='text-[#9B2B87]'>FNFEE</span></h1>
 
-      <div className='flex flex-col md:flex-row justify-center gap-12 items-center md:items-start'>
+      <div className='flex flex-col lg:flex-row justify-center gap-12 items-center lg:items-start'>
         <img src={founder} alt="Founder" className='md:w-[605px] h-[500px] md:h-[920px]' />
 
 
-        <p className='md:w-[540px] w-[100%] text-[16px] text-center md:text-start font-inter font-normal text-[#353334] hidden md:block'>Founded and registered by Oluwaseun Kola Akinola in 2024, and with headquarter in Ado Ekiti, Ekiti State; Nigeria we are committed to empowering women by providing resources in technology, gender advocacy, and personal development. 
+        <p className='lg:w-[540px] w-[100%] text-[16px] text-center md:text-start font-inter font-normal text-[#353334] hidden lg:block'>Founded and registered by Oluwaseun Kola Akinola in 2024, and with headquarter in Ado Ekiti, Ekiti State; Nigeria we are committed to empowering women by providing resources in technology, gender advocacy, and personal development. 
                 Our mission is aligned with the United Nations Sustainable Development Goals (SDGs), particularly Goals 5, 4, and 8, to create a safe, inclusive space where women can embrace their identity, grow personally and professionally, and break free from societal limitations.
                 <br /> <br />
                 BYT is a non-profit organization devoted to empowering women through personal growth, self-discovery, and transformation. We provide a safe and supportive space for women to rebuild their sense of self-worth, explore their identity, and achieve personal and professional success.
@@ -38,7 +38,7 @@ export default function About() {
         </p>
 
 
-        <p className='md:w-[540px] w-[100%] text-[16px] text-center md:text-start font-inter font-normal text-[#353334] block md:hidden'>
+        <p className='lg:w-[540px] w-[100%] text-[16px] text-center lg:text-start font-inter font-normal text-[#353334] block lg:hidden'>
           Founded and registered by Oluwaseun Kola Akinola in 2024, and with headquarter in Ado Ekiti, Ekiti State; Nigeria we are committed to empowering women by providing resources in technology, gender advocacy, and personal development. 
           Our mission is aligned with the United Nations Sustainable Development Goals (SDGs), particularly Goals 5, 4, and 8, to create a safe, inclusive space where women can embrace their identity, grow personally and professionally, and break free from societal limitations.
           
@@ -62,7 +62,7 @@ export default function About() {
         {/* Learn More Button */}
         <button
           onClick={handleShowMore}
-          className='bg-[#9B2B87] mb-10 w-[200px] h-[54px] rounded-[20px] text-white font-inter text-[20px] font-semibold block md:hidden'
+          className='bg-[#9B2B87] mb-10 w-[200px] h-[54px] rounded-[20px] text-white font-inter text-[20px] font-semibold block lg:hidden'
         >
           {showMore ? 'Show Less' : 'Learn More'}
         </button>

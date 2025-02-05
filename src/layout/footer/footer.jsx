@@ -10,7 +10,7 @@ import logo from '../../assets/image 5.svg'
 export default function footer() {
   return (
     <div className='flex flex-col justify-center items-center bg-[white]'>
-        <div className='bg-black w-[100%] overflow-hidden flex flex-col md:flex-row py-10 justify-center items-center gap-28 md:gap-56'>
+        <div className='bg-black w-[100%] overflow-hidden flex flex-col lg:flex-row py-10 justify-center items-center gap-28 lg:gap-56'>
             <div className='flex flex-col gap-8'>
                 <div className=' flex flex-col gap-4'> 
                     <p className='font-roboto font-normal text-[18px] text-white '>WE ARE ACTIVE ON SOCIAL MEDIA</p>
@@ -32,7 +32,7 @@ export default function footer() {
             </div>
 
 
-            <div className='flex flex-col md:flex-row gap-16'>
+            <div className='flex flex-col lg:flex-row gap-16'>
                 <div className='flex flex-col gap-8'>
                     <p className='font-normal text-[white] font-roboto text-[19px] '>ABOUTS US</p>
                     <ul className='flex flex-col gap-3'>

@@ -76,10 +76,10 @@ export default function ResultPage() {
 
   return (
     <div>
-      <div className="eventbg h-[200px] w-[100%] flex flex-col items-end gap-3 pt-24 md:px-[180px] px-[20px] mb-6">
+      <div className="eventbg h-[200px] w-[100%] flex flex-col items-end gap-3 pt-24 lg:px-[180px] px-[20px] mb-6">
         <h1 className="text-2xl text-[white] font-climate font-bold">EVENTS</h1>
-        <hr className="md:w-[400px] w-[300px]" />
-        <p className="font-inter font-normal text-[10px] md:text-[19px] text-white">
+        <hr className="lg:w-[400px] w-[300px]" />
+        <p className="font-inter font-normal text-[10px] lg:text-[19px] text-white">
           FEMALE NETWORK FOUNDATION FOR EMPOWERMENT AND EQUITY
         </p>
       </div>
@@ -94,7 +94,7 @@ export default function ResultPage() {
             {events.slice(0, visibleCount).map((event) => (
               <div
                 key={event.id}
-                className="border rounded-lg p-4 shadow-md hover:shadow-lg transition cursor-pointer"
+                className="border rounded-lg p-4 shadow-lg hover:shadow-lg transition cursor-pointer"
               >
                 {event.event_image ? (
                   <img
@@ -122,7 +122,7 @@ export default function ResultPage() {
                   <strong>Type:</strong> {event.event_type}
                 </p>
                 <p
-                  className="text-gray-700 max-w-[350px] md:max-w-[500px] break-words whitespace-pre-wrap "
+                  className="text-gray-700 max-w-[350px] lg:max-w-[500px] break-words whitespace-pre-wrap "
                   onClick={() => handleOpenModal(event.event_details)}
                 >
                   {event.event_details.split(" ").length > 20
@@ -147,25 +147,25 @@ export default function ResultPage() {
             </div>
           )}
 
-          <div className="pt-[30px] flex flex-col justify-center items-center px-[20px] md:px-[40px] gap-10  py-14 overflow-hidden">
-            <div className="flex flex-col items-center gap-4 px-5 md:px-0 ">
-              <p className="w-[100%] md:w-[1070px] font-inter font-normal text-[16px] ">
+          <div className="pt-[30px] flex flex-col justify-center items-center px-[20px] lg:px-[40px] gap-10  py-14 overflow-hidden">
+            <div className="flex flex-col items-center gap-4 px-5 lg:px-0 ">
+              <p className="w-[100%] lg:w-[1070px] font-inter font-normal text-[16px] ">
                 We’d love to hear from you! whether you have questions, idea,
                 comments, or suggestion please fill out and summit the contact
                 form below for more information about the Female Network
                 Foundation And Equity
               </p>
-              <p className="w-[100%] md:w-[1070px] font-inter font-normal text-[16px] ">
+              <p className="w-[100%] lg:w-[1070px] font-inter font-normal text-[16px] ">
                 call: +2349024208159
               </p>
-              <p className="w-[100%] md:w-[1070px] font-inter font-normal text-[16px] ">
+              <p className="w-[100%] lg:w-[1070px] font-inter font-normal text-[16px] ">
                 Email: fnfeefoundation001@yahoo.com
               </p>
             </div>
 
             <form
               action=""
-              className="flex flex-col justify-center items-center md:items-start gap-7"
+              className="flex flex-col justify-center items-center lg:items-start gap-7"
             >
               <label htmlFor="">
                 <input
@@ -173,7 +173,7 @@ export default function ResultPage() {
                   id="fname"
                   name="fname"
                   placeholder="Full Name"
-                  className="md:w-[971px] border-[2px] border-black w-[300px] h-[52px] px-3"
+                  className="lg:w-[971px] border-[2px] border-black w-[300px] h-[52px] px-3"
                 />
               </label>
 
@@ -183,7 +183,7 @@ export default function ResultPage() {
                   id="fname"
                   name="fname"
                   placeholder="Email Address"
-                  className="md:w-[971px] border-[2px] border-black w-[300px] h-[52px] px-3"
+                  className="lg:w-[971px] border-[2px] border-black w-[300px] h-[52px] px-3"
                 />
               </label>
 
@@ -193,7 +193,7 @@ export default function ResultPage() {
                   id="fname"
                   name="fname"
                   placeholder="Phone Number"
-                  className="md:w-[971px] border-[2px] border-black w-[300px] h-[52px] px-3 "
+                  className="lg:w-[971px] border-[2px] border-black w-[300px] h-[52px] px-3 "
                 />
               </label>
 
@@ -203,7 +203,7 @@ export default function ResultPage() {
                   id="fname"
                   name="fname"
                   placeholder="Your Message"
-                  className="md:w-[971px] border-[2px] border-black w-[300px] h-[182px] px-3 "
+                  className="lg:w-[971px] border-[2px] border-black w-[300px] h-[182px] px-3 "
                 />
               </label>
 
@@ -215,7 +215,7 @@ export default function ResultPage() {
 
           <section id="donatee">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-[20px] py-10 gap-6 overflow-hidden">
-              <div className="border rounded-lg p-4 shadow-md hover:shadow-lg transition cursor-pointer flex flex-col justify-center items-center">
+              <div className="border rounded-lg p-4 shadow-lg hover:shadow-lg transition cursor-pointer flex flex-col justify-center items-center">
                 <img
                   src={donate}
                   alt={donate}
@@ -233,7 +233,7 @@ export default function ResultPage() {
                 </a>
               </div>
 
-              <div className="border rounded-lg p-4 shadow-md hover:shadow-lg transition cursor-pointer flex flex-col justify-center items-center">
+              <div className="border rounded-lg p-4 shadow-lg hover:shadow-lg transition cursor-pointer flex flex-col justify-center items-center">
                 <img
                   src={contact}
                   alt={contact}
@@ -251,7 +251,7 @@ export default function ResultPage() {
                 </a>
               </div>
 
-              <div className="border rounded-lg p-4 shadow-md hover:shadow-lg transition cursor-pointer flex flex-col justify-center items-center">
+              <div className="border rounded-lg p-4 shadow-lg hover:shadow-lg transition cursor-pointer flex flex-col justify-center items-center">
                 <img
                   src={rsvp}
                   alt={rsvp}
@@ -271,12 +271,12 @@ export default function ResultPage() {
             </div>
           </section>
 
-          <div className="stayss flex flex-col justify-center items-center px-[20px] md:px-[40px]  overflow-hidden">
-            <div className="flex flex-col justify-center items-center pt-5 md:pt-0 md:pb-10 pb-5 md:py-20 gap-5 md:gap-8">
+          <div className="stayss flex flex-col justify-center items-center px-[20px] lg:px-[40px]  overflow-hidden">
+            <div className="flex flex-col justify-center items-center pt-5 lg:pt-0 lg:pb-10 pb-5 lg:py-20 gap-5 lg:gap-8">
               <h2 className="text-[24px] font-inter font-medium pt-10  text-white ">
                 PARTNER WITH US
               </h2>
-              <p className="text-[20px] font-inter font-normal text-white w-[100%] md:w-[900px] text-center md:text-[start] ">
+              <p className="text-[20px] font-inter font-normal text-white w-[100%] lg:w-[900px] text-center lg:text-[start] ">
                 Join us in this exciting journey as we change the African
                 narrative through empowering African Females and contributing to
                 its development space.
