@@ -15,18 +15,18 @@ export default function footer() {
                 <div className=' flex flex-col gap-4'> 
                     <p className='font-roboto font-normal text-[18px] text-white '>WE ARE ACTIVE ON SOCIAL MEDIA</p>
                     <div className='flex flex-row gap-5'>
-                            <NavLink to =''><FaFacebook className='bg-white w-[26px] h-[26px] ' /></NavLink>
-                            <NavLink to =''><FaLinkedin className='bg-white w-[26px] h-[26px] ' /></NavLink>
+                            <NavLink to ='https://www.facebook.com/share/1HpNd6vNmb/'><FaFacebook className='bg-white w-[26px] h-[26px] ' /></NavLink>
+                            <NavLink to ='https://www.linkedin.com/company/fnfee-foundation/'><FaLinkedin className='bg-white w-[26px] h-[26px] ' /></NavLink>
                             <NavLink to =''><AiFillTikTok className='bg-white w-[26px] h-[26px] ' /></NavLink>
-                            <NavLink to =''><FaSquareXTwitter className='bg-white w-[26px] h-[26px] ' /></NavLink>
-                            <NavLink to =''><FaInstagramSquare className='bg-white w-[26px] h-[26px] ' /></NavLink>
+                            <NavLink to ='https://x.com/fnfeefoundation?t=_AWYBsk70BlR9XXsWxHCdw&s=09'><FaSquareXTwitter className='bg-white w-[26px] h-[26px] ' /></NavLink>
+                            <NavLink to ='https://www.instagram.com/fnfee_foundation?igsh=NTFubzlycWt4Y3Ix'><FaInstagramSquare className='bg-white w-[26px] h-[26px] ' /></NavLink>
     
                     </div>
                 </div>
                 <div className='flex flex-col'>
                     <p className='text-[#C33AAA] text-[18px] font-roboto font-normal '>Call:  +23490242081599</p>
                     <p className='text-[#C33AAA] text-[18px] font-roboto font-normal '>Send us an email <br/>
-                    <span><a href='brokenyettransformed@gmail.com'>@brokenyettransformed@gmail.com</a></span></p>
+                    <span><a href='brokenyettransformed@gmail.com'>@fnfeefoundation001@yahoo.com</a></span></p>
                     <p className='text-[#C33AAA] text-[18px] font-roboto font-normal '>Join our network across Africa</p>
                 </div>
             </div>
@@ -36,7 +36,7 @@ export default function footer() {
                 <div className='flex flex-col gap-8'>
                     <p className='font-normal text-[white] font-roboto text-[19px] '>ABOUTS US</p>
                     <ul className='flex flex-col gap-3'>
-                        <li><NavLink className='font-roboto text-white font-light text-[18px] '>Mission & vision</NavLink></li>
+                        <li><NavLink to='/#about' className='font-roboto text-white font-light text-[18px] '>Mission & vision</NavLink></li>
                         <li><NavLink className='font-roboto text-white font-light text-[18px] '>Partners</NavLink></li>
                         <li><NavLink className='font-roboto text-white font-light text-[18px] '>Mentors</NavLink></li>
                         <li><NavLink className='font-roboto text-white font-light text-[18px] '>Get involved</NavLink></li>

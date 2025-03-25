@@ -13,12 +13,12 @@ import image4 from '../assets/part.svg'
 export default function ourlearders() {
 
     const values = [
-        { title: kola, name:'Oluwaseun Kola Akinola', role: 'FOUNDER'},
+        { title: kola, name:'Oluwaseun Kola Akinola', role: 'EXECUTIVE DIRECTOR'},
         { title: felix, name:'Felix O Ajifowobaje ', role: 'CHAIRMAN TRUSTEE'},
         { title: esther, name:'Esther Ademoroti', role: 'BOARD MEMBER'},
         { title: olamide, name:'Olamide Alao Akala', role: 'ADVISORY BOARD MEMBER'},
         { title: precious, name:'Precious.A Akinyede', role: 'SECRETARY'},
-        { title: ileri, name:'Ayomide Ilori', role: 'BYT COMMUNITY MANAGER'}
+        { title: ileri, name:'Ayomide Ilori', role: 'COMMUNITY MANAGER'}
         ]
 
     const faq = [

@@ -8,6 +8,7 @@ import BLOGr from './pages/blog'
 import LOGINEVENT from "./pages/login"
 import LOGINB from "./pages/loginb"
 import PostPage from "./pages/seeblog"
+import CONTACT from "./pages/contact"
 export default function Router() {
     const routes = useRoutes([
         {
@@ -47,6 +48,14 @@ export default function Router() {
             element: <LOGINB />,
             index: true,
           },
+
+          {
+            path: "contact",
+            element: <CONTACT />,
+            index: true,
+          },
+          
+
 
           {
             path: "post/:slug" ,

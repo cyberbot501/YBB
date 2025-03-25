@@ -1,5 +1,6 @@
 import React from 'react'
 import heroi from '../assets/image.svg'
+import { Link } from 'react-router-dom'
 
 export default function hero() {
   return (
@@ -11,7 +12,7 @@ export default function hero() {
                 BREAKING BARRIERS AND BUILDING FUTURES FOR 
                 WOMEN ACROSS THE WORLD.
             </p>
-            <button className='bg-[#9B2B87] w-[200px] h-[54px] rounded-[20px] text-white font-inter text-[20px] font-semibold'>Learn More</button>
+            <Link to='https://chat.whatsapp.com/HM1Z0qWPHuxKCqlUo7wSui' className='bg-[#9B2B87] w-[200px] h-[54px] place-content-center px-14 rounded-[20px] text-white font-inter text-[20px] font-semibold'>JOIN US</Link>
         </div>
         <img src={heroi} alt="" className='w-[533px] h-[605px] rounded-[20px] '/>
     </div>

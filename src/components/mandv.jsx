@@ -13,7 +13,7 @@ export default function mandv() {
 
             <div className='flex flex-col '>
               <h2 className='underline decoration-4 decoration-[#C33AAA] text-white text-[18pxpx] md:text-[36px] font-inter font-medium lg:w-[370px]  '>Mission Statement</h2>
-              <p className='text-white text-[14px]  md:text-[27px] lg:text-[32px] font-inter font-light w-[170px] md:w-[300px] lg:w-[450px] '>By 2025, we are committed to reaching and empowering over 5,000 women, expanding our impact to five African countries with 500 active community members Aligned with(SDGs) 5, 4, and 8.</p>
+              <p className='text-white text-[14px]  md:text-[27px] lg:text-[32px] font-inter font-light w-[170px] md:w-[300px] lg:w-[450px] '>By 2026, we are committed to reaching and empowering over 5,000 women, expanding our impact to five African countries with 500 active community members Aligned with(SDGs) 5, 4, and 8.</p>
           </div>
          </div>
     </div>
