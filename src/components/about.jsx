@@ -23,7 +23,7 @@ export default function About() {
         <img src={founder} alt="Founder" className='md:w-[605px] h-[500px] md:h-[920px] rounded-[20px] ' />
 
 
-        <p className='lg:w-[540px] w-[100%] text-[16px] text-center md:text-start font-inter font-normal text-[#353334] hidden lg:block'>Founded and registered by Oluwaseun Kola Akinola in 2024, CAC(RN: 8191592) & SCUML( RN: SC 131401223) and with headquarter in Ado Ekiti, Ekiti State; Nigeria we are committed to empowering women by providing resources in technology, gender advocacy, and personal development. 
+        <p className='lg:w-[540px] w-[100%] text-[16px] text-center md:text-start font-inter font-normal text-[#353334] hidden lg:block'>Founded and registered by Oluwaseun Kola Akinola in 2024, CAC(RN: 8191592), SCUML( RN: SC 131401223) and with headquarter in Ado Ekiti, Ekiti State; Nigeria we are committed to empowering women by providing resources in technology, gender advocacy, and personal development. 
                 Our mission is aligned with the United Nations Sustainable Development Goals (SDGs), particularly Goals 5, 4, and 8, to create a safe, inclusive space where women can embrace their identity, grow personally and professionally, and break free from societal limitations.
                 <br /> <br />
                 FNFEE is a non-profit organization devoted to empowering women through personal growth, self-discovery, and transformation. We provide a safe and supportive space for women to rebuild their sense of self-worth, explore their identity, and achieve personal and professional success.

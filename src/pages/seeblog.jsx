@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import imageUrlBuilder from "@sanity/image-url";
@@ -18,6 +17,7 @@ const PostPage = () => {
   const [post, setPost] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -42,6 +42,7 @@ const PostPage = () => {
   return (
     <div>
       <Nav />
+      {/* Blog Header */}
       <div className="eventbg h-[200px] w-[100%] flex flex-col items-end gap-3 pt-24 md:px-[180px] px-[20px] mb-6">
         <h1 className="text-2xl text-[white] font-climate font-bold">BLOGS</h1>
         <hr className="md:w-[400px] w-[300px]" />
@@ -50,6 +51,7 @@ const PostPage = () => {
         </p>
       </div>
 
+      {/* Blog Content */}
       <main className="container mx-auto min-h-screen max-w-3xl p-8 flex flex-col gap-4">
         <Link to="/blog" className="hover:underline">
           ← Back to posts
@@ -73,9 +75,20 @@ const PostPage = () => {
                 height="310"
               />
             )}
+
+            {/* Post Content with Read More Feature */}
             <div className="prose">
               <p>Published: {new Date(post.publishedAt).toLocaleDateString()}</p>
-              {Array.isArray(post.body) && <PortableText value={post.body} />}
+              {Array.isArray(post.body) && (
+                <div
+                  className='text-gray-700 max-w-[350px] lg:max-w-[500px] break-words whitespace-pre-wrap overflow-hidden transition-all duration-300'
+                >
+                  <PortableText value={post.body} />
+                </div>
+              )}
+
+             
+             
             </div>
           </>
         ) : (

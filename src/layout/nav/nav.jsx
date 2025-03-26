@@ -79,6 +79,11 @@ export default function Nav() {
             Events
           </NavLink>
         </li>
+        <li className='p-2 lg:p-0'>
+          <NavLink to='/contact' className='block md:hidden text-[20px] font-roboto font-bold text-[#C33AAA] md:text-white md:hover:bg-[#6F6B6E] hover:rounded-[65px] px-9 py-4'>
+            Contact Us
+          </NavLink>
+        </li>
       </ul>
 
     

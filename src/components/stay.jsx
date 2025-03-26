@@ -20,7 +20,7 @@ export default function stay() {
                 <input type="text" id="fname" name="fname" placeholder="Jomiloju Joel" className='lg:w-[971px] w-[300px] h-[52px] px-3 '/>
             </label>
             <p className='lg:pl-[0px] pl-[30px] text-[white] text-[16px] font-roboto font-light '>I agree to receive notification, updates, publications, alerts,newsletters from the<br />
-            bytfoundation.net</p>
+            fnfeefoundation.org</p>
 
             <button className='bg-[#C33AAA] w-[231px] h-[64px] text-white font-roboto font-light text-[23px] '>SUBSCRIBE</button>
          </form>
