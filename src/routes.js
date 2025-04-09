@@ -9,6 +9,7 @@ import LOGINEVENT from "./pages/login"
 import LOGINB from "./pages/loginb"
 import PostPage from "./pages/seeblog"
 import CONTACT from "./pages/contact"
+import DONATE from "./pages/donate"
 export default function Router() {
     const routes = useRoutes([
         {
@@ -52,6 +53,12 @@ export default function Router() {
           {
             path: "contact",
             element: <CONTACT />,
+            index: true,
+          },
+
+          {
+            path: "donate",
+            element: <DONATE />,
             index: true,
           },
           

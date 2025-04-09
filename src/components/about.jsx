@@ -39,7 +39,7 @@ export default function About() {
 
 
         <p className='lg:w-[540px] w-[100%] text-[16px] text-center lg:text-start font-inter font-normal text-[#353334] block lg:hidden'>
-          Founded and registered by Oluwaseun Kola Akinola in 2024, and with headquarter in Ado Ekiti, Ekiti State; Nigeria we are committed to empowering women by providing resources in technology, gender advocacy, and personal development. 
+        Founded and registered by Oluwaseun Kola Akinola in 2024, CAC(RN: 8191592), SCUML( RN: SC 131401223) and with headquarter in Ado Ekiti,, Ekiti State; Nigeria we are committed to empowering women by providing resources in technology, gender advocacy, and personal development. 
           Our mission is aligned with the United Nations Sustainable Development Goals (SDGs), particularly Goals 5, 4, and 8, to create a safe, inclusive space where women can embrace their identity, grow personally and professionally, and break free from societal limitations.
           
           {/* Hidden paragraphs */}
