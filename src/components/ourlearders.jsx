@@ -1,5 +1,5 @@
 import React from 'react'
-import kola from '../assets/kola.svg'
+import kola from '../assets/kolaa.jpg'
 import felix from '../assets/felix.svg'
 import esther from '../assets/esther.svg'
 import ileri from '../assets/ileri.svg'
