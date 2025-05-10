@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import founder from '../assets/founder.svg';
+import founder from '../assets/kolaa.jpg';
 
 export default function About() {
   const [showMore, setShowMore] = useState(false); 
